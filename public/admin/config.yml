@@ -6,8 +6,7 @@ backend:
   repo: issiki/my-portfolio-nextjs-decapcms
 
 # set to true to allow decap cms to save file locally during development
-# local_backend: true
-local_backend: false
+local_backend: true
 
 media_folder: "public/uploads"  # Folder to store media
 public_folder: "/uploads"  # Public URL for media
