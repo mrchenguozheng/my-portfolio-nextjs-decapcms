@@ -1,4 +1,5 @@
 // pages/admin/index.tsx
+// for `npm run dev`
 
 import { useEffect } from "react";
 import Head from "next/head";

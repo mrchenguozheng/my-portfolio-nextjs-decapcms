@@ -5,8 +5,6 @@ import { PostData } from "./types"; // Import your type
 
 const postsDirectory = path.join(process.cwd(), "public/content/posts");
 
-console.log("postsDirectory:", postsDirectory)
-
 /**
  * getSortedPostsData
  * 读取所有 Markdown 文件，提取其元数据，按日期排序，并返回一个帖子数据的数组。

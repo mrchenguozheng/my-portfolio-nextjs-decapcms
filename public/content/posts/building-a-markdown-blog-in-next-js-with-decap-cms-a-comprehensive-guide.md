@@ -466,6 +466,8 @@ Within this directory `content/posts`, you can manually create Markdown files fo
 
 Decap CMS allows you to preview content directly within the admin interface. You can test this feature by creating a new post and using the preview option available in the editor.
 
+![The Admin Interface of Decap CMS](/uploads/ae9c0df1-08fa-46cf-b50d-cf37109e1c8d.avif)
+
 ## 5. Writing Utility Functions for Markdown Posts
 
    To effectively manage and fetch your blog posts, it’s a good practice to create a utility file containing functions that handle operations related to your Markdown files. This can help keep your code clean and organized.
