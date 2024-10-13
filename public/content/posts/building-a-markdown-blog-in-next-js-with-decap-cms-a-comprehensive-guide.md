@@ -9,14 +9,14 @@ thumbnail: /uploads/ae9c0df1-08fa-46cf-b50d-cf37109e1c8d.avif
 
 ## Introduction
 
-In today’s fast-paced web development environment, having a reliable content management system (CMS) is essential for managing your content efficiently. Decap CMS, formerly known as Netlify CMS, is a powerful open-source headless CMS that allows developers to manage content in a user-friendly interface while leveraging the power of static site generation with frameworks like Next.js. In this tutorial, we’ll walk you through the steps to set up and use Decap CMS in a Next.js application.
+In today’s fast-paced web development environment, having a reliable content management system (CMS) is essential for managing your content efficiently. Decap CMS, formerly known as *Netlify CMS*, is a powerful open-source headless CMS that allows developers to manage content in a user-friendly interface while leveraging the power of static site generation with frameworks like Next.js. In this tutorial, we’ll walk you through the steps to set up and use Decap CMS in a Next.js application.
 
 ## Prerequisites
 
 Before we get started, ensure that you have the following:
 
-* A basic understanding of Next.js
-* Node.js and npm installed
+* A basic understanding of [Next.js](https://nextjs.org/docs/getting-started)
+* [Node.js](https://nodejs.org/) and npm installed
 * Familiarity with Git and version control
 
 ## 1. Setting Up a Next.js Project
@@ -30,13 +30,13 @@ npx create-next-app my-nextjs-cms
 cd my-nextjs-cms
 ```
 
-This command creates a new Next.js project in a folder named and navigates into that directory. `my-nextjs-cms`
+This command creates a new Next.js project in a folder named `my-nextjs-cms` and navigates into that directory.
 
 ### 1.2 Install Necessary Packages
 
 Next, we need to install Decap CMS. You can do this by running:
 
-```bash
+```shell
 npm install decap-cms-app
 ```
 
@@ -46,11 +46,11 @@ This command installs Decap CMS in your Next.js project, making it available for
 
 ### 2.1 Create a Configuration File
 
-   Now, we’ll create a configuration file for Decap CMS. This file will define the settings and collections that Decap CMS will use.
+Now, we’ll create a configuration file for Decap CMS. This file will define the settings and collections that Decap CMS will use.
 
-Create a directory named `admin` inside the folder: `public`
+Create a directory named `admin` inside the `public` folder:
 
-```bash
+```shell
 # Create and navigate into public/admin folder
 
 mkdir -p public/admin
@@ -62,7 +62,7 @@ touch index.html
 touch config.yml
 ```
 
-Then, create a file named `config.yml` in the directory: `public/admin`
+Then, create a file named `config.yml` in the `public/admin` directory:
 
 ```yml
 # public/admin/config.yml
@@ -96,37 +96,37 @@ This configuration sets up a backend with Git Gateway, specifies where to store 
 
 Here's a breakdown of the provided code in a table format:
 
-| Key                       | Description                                                                                                                                                                                                                                      |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| collections               | An array defining different content collections for the CMS.                                                                                                                                                                                     |
-| \- name                   | "posts": The name of the collection, used internally by the CMS.                                                                                                                                                                                 |
-| \-  label                 | "Posts": The label that will be displayed in the admin UI for users.                                                                                                                                                                             |
-| folder                    | "content/posts": The directory where the posts will be stored in the file system.                                                                                                                                                                |
-| create                    | true: Indicates that new posts can be created in this collection.                                                                                                                                                                                |
-| slug                      | "{{year}}-{{month}}-{{day}}-{{slug}}": The format for generating post URLs, using the year, month, day, and custom slug.                                                                                                                         |
-| fields                    | An array defining the fields that each post will have, usually found in the front matter at the beginning of the document, (except for , which follows the front matter). Each field contains the following properties: , , .bodylabelwidgetname |
-| \- { name: "layout"       | Defines a field for the post's layout.                                                                                                                                                                                                           |
-| label: "Layout"           | The label for the layout field, shown in the admin UI.                                                                                                                                                                                           |
-| widget: "hidden"          | The type of widget for this field, which is hidden in the UI.                                                                                                                                                                                    |
-| default: "posts"          | The default value for this field, set to "posts".                                                                                                                                                                                                |
-| \- { name: "title"        | Defines a field for the post's title.                                                                                                                                                                                                            |
-| label: "Title"            | The label for the title field in the admin UI.                                                                                                                                                                                                   |
-| widget: "string"          | The type of widget for this field, which allows string input.                                                                                                                                                                                    |
-| \* { name: "date"         | Defines a field for the post's date.                                                                                                                                                                                                             |
-| label: "Date"             | The label for the date field in the admin UI.                                                                                                                                                                                                    |
-| widget: "dateformat"      | The type of widget for date input, providing a date picker.                                                                                                                                                                                      |
-| date_format: "YYYY-MM-DD" | Specifies the format for displaying the date.                                                                                                                                                                                                    |
-| time_format: false        | Indicates that time should not be included in this field.                                                                                                                                                                                        |
-| \- { name: "thumbnail"    | Defines a field for the post's featured image.                                                                                                                                                                                                   |
-| label: "Featured Image"   | The label for the thumbnail field in the admin UI.                                                                                                                                                                                               |
-| widget: "image"           | The type of widget for this field, allowing image uploads.                                                                                                                                                                                       |
-| \- { name: "body"         | Defines a field for the main content of the post.                                                                                                                                                                                                |
-| label: "Body"             | The label for the body field in the admin UI.                                                                                                                                                                                                    |
-| widget: "markdown"        | The type of widget for this field, allowing for Markdown input for the post content.                                                                                                                                                             |
+| Key                         | Description                                                                                                                                                                                                                                        |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `collections`               | An array defining different content collections for the CMS.                                                                                                                                                                                       |
+| `- name`                    | `"posts"`: The name of the collection, used internally by the CMS.                                                                                                                                                                                 |
+| `label`                     | `"Posts"`: The label that will be displayed in the admin UI for users.                                                                                                                                                                             |
+| `folder`                    | `"content/posts"`: The directory where the posts will be stored in the file system.                                                                                                                                                                |
+| `create`                    | `true`: Indicates that new posts can be created in this collection.                                                                                                                                                                                |
+| `slug`                      | `"{{year}}-{{month}}-{{day}}-{{slug}}"`: The format for generating post URLs, using the year, month, day, and custom slug.                                                                                                                         |
+| `fields`                    | An array defining the fields that each post will have, usually found in the front matter at the beginning of the document, (except for `body`, which follows the front matter). Each field contains the following properties: label, widget, name. |
+| `- { name: "layout"`        | Defines a field for the post's layout.                                                                                                                                                                                                             |
+| `label: "Layout"`           | The label for the layout field, shown in the admin UI.                                                                                                                                                                                             |
+| `widget: "hidden"`          | The type of widget for this field, which is hidden in the UI.                                                                                                                                                                                      |
+| `default: "posts"`          | The default value for this field, set to "posts".                                                                                                                                                                                                  |
+| `- { name: "title"`         | Defines a field for the post's title.                                                                                                                                                                                                              |
+| `label: "Title"`            | The label for the title field in the admin UI.                                                                                                                                                                                                     |
+| `widget: "string"`          | The type of widget for this field, which allows string input.                                                                                                                                                                                      |
+| `- { name: "date"`          | Defines a field for the post's date.                                                                                                                                                                                                               |
+| `label: "Date"`             | The label for the date field in the admin UI.                                                                                                                                                                                                      |
+| `widget: "dateformat"`      | The type of widget for date input, providing a date picker.                                                                                                                                                                                        |
+| `date_format: "YYYY-MM-DD"` | Specifies the format for displaying the date.                                                                                                                                                                                                      |
+| `time_format: false`        | Indicates that time should not be included in this field.                                                                                                                                                                                          |
+| `- { name: "thumbnail"`     | Defines a field for the post's featured image.                                                                                                                                                                                                     |
+| `label: "Featured Image"`   | The label for the thumbnail field in the admin UI.                                                                                                                                                                                                 |
+| `widget: "image"`           | The type of widget for this field, allowing image uploads.                                                                                                                                                                                         |
+| `- { name: "body"`          | Defines a field for the main content of the post.                                                                                                                                                                                                  |
+| `label: "Body"`             | The label for the body field in the admin UI.                                                                                                                                                                                                      |
+| `widget: "markdown"`        | The type of widget for this field, allowing for Markdown input for the post content.                                                                                                                                                               |
 
 This table breaks down each part of the configuration, providing a clear understanding of the structure and purpose of each key in the CMS collection setup.
 
-Paste HTML for Decap CMS into your filepublic/admin/index.html
+Paste HTML for Decap CMS into your `public/admin/index.html` file
 
 ```html
 <!doctype html>
@@ -149,19 +149,19 @@ Paste HTML for Decap CMS into your filepublic/admin/index.html
 
 To enable authentication, you can use Git Gateway. This allows users to authenticate via Git providers (e.g., GitHub, GitLab) or services like Netlify. Make sure your hosting platform supports this configuration.
 
-1. If you are using Netlify, enable Identity and Git Gateway in your Netlify dashboard.
+1. If you are using Netlify, enable Identity and Git Gateway in your **Netlify dashboard**.
 
-   1. Go to Integrations > Identity > Netlify Identity - Enable, click Enable Identity, and then go to Configuration and usage.
-   2. Under Registration, choose Open or Invite only. Usually, you want only invited users to access your CMS, but if you're just testing, you can leave it open.
-   3. To allow one-click login with services like Google and GitHub, check the boxes next to the services you want to use under External providers.
-   4. Scroll down to Services > Git Gateway, and click Enable Git Gateway. This will authenticate with your Git host and generate an API access token. We're leaving the Roles field blank, which means any logged-in user can access the CMS. For more details on changing this, check the Netlify Identity documentation.
-2. Configure your repos settings to allow access via the configured identity provider.
+   1. Go to **Integrations > Identity > Netlify Identity - Enable**, click **Enable Identity**, and then go to **Configuration and usage**.
+   2. Under **Registration**, choose **Open** or **Invite only**. Usually, you want only invited users to access your CMS, but if you're just testing, you can leave it open.
+   3. To allow one-click login with services like Google and GitHub, check the boxes next to the services you want to use under **External providers**.
+   4. Scroll down to **Services > Git Gateway**, and click **Enable Git Gateway**. This will authenticate with your Git host and generate an API access token. We're leaving the **Roles** field blank, which means any logged-in user can access the CMS. For more details on changing this, check the [Netlify Identity documentation](https://www.netlify.com/docs/identity/).
+2. [Configure your repos settings](https://www.netlify.com/docs/identity/) to allow access via the configured identity provider.
 
 ## 3. Create Admin Interface
 
 ### 3.1 Create the Admin Page
 
-   We need to create a page that will serve as the admin interface for Decap CMS. Create a new file named in the directory:index.tsxpages/admin
+   We need to create a page that will serve as the admin interface for Decap CMS. Create a new file named `index.tsx` in the `pages/admin` directory:
 
 ```tsx
 // pages/admin/index.tsx
@@ -255,14 +255,14 @@ Alternatively, we can also use the Next.js Script tag like this:
 
 ### Let's break down the code.
 
-Importing Required Modules
+*Importing Required Modules*
 
 ```tsx
 import { useEffect } from "react";
 import Head from "next/head";
 ```
 
-The code begins by importing necessary modules. `useEffect` from React is a hook that allows us to perform side effects in functional components, such as initializing authentication when the component mounts. from Next.js is used `Head` to manage the document head, allowing us to set meta tags, titles, and scripts essential for our application. 
+The code begins by importing necessary modules. `useEffect` from React is a hook that allows us to perform side effects in functional components, such as initializing authentication when the component mounts. `Head` from Next.js is used to manage the document head, allowing us to set meta tags, titles, and scripts essential for our application. 
 
 ### Defining the Netlify Identity Interface
 
@@ -273,7 +273,7 @@ interface NetlifyIdentity {
 }
 ```
 
-Here, we define an interface called `NetlifyIdentity`. This interface specifies the structure of the Netlify Identity object we expect to find on the `window` object. The method `on` allows us to listen for specific events (like "init" or "login") and provide a callback function that receives a `user` object.
+Here, we define an interface called `NetlifyIdentity`. This interface specifies the structure of the Netlify Identity object we expect to find on the `window` object. The `on` method allows us to listen for specific events (like "init" or "login") and provide a callback function that receives a `user` object.
 
 ### Declaring Global Variables
 
@@ -285,7 +285,7 @@ declare global {
 }
 ```
 
-In this section, we extend the global interface to include our `Window` interface. This ensures TypeScript understands that `window.netlifyIdentity` exists and conforms to our defined `NetlifyIdentity` structure, eliminating type errors during development.
+In this section, we extend the global `Window` interface to include our `NetlifyIdentity` interface. This ensures TypeScript understands that `window.netlifyIdentity` exists and conforms to our defined  structure, eliminating type errors during development.
 
 ### The CMSPage Component
 
@@ -309,16 +309,16 @@ useEffect(() => {
       }
     });
   }
-}, \[]);
+}, []);
 ```
 
-Inside the component, we utilize the hook `useEffect`. This hook runs after the component mounts, and here’s what happens:
+Inside the component, we utilize the `useEffect` hook. This hook runs after the component mounts, and here’s what happens:
 
 1. **Check for Netlify Identity**: We first check if `window.netlifyIdentity` is available, ensuring that the Netlify Identity script has loaded properly.
 2. Listening for Events:
 
    * **"init" Event**: When the Netlify Identity initializes, it returns a `user` object if the user is already logged in. If `user` is `null`, it indicates that no user is logged in.
-   * **"login" Event**: If the user logs in, we redirect them to the route `/admin/`, where they can manage content.
+   * **"login" Event**: If the user logs in, we redirect them to the `/admin/` route, where they can manage content.
 
 This flow ensures that users who are not logged in are automatically redirected to the login interface.
 
@@ -371,7 +371,7 @@ Finally, we define a `<main>` element with an ID of `cms`. This is where Decap C
 export default CMSPage;
 ```
 
-We export the component `CMSPage`, making it available for use in other parts of our Next.js application.
+We export the `CMSPage` component, making it available for use in other parts of our Next.js application.
 
 ## 3.2 Start Your local server
 
@@ -388,7 +388,7 @@ Ensure you're in the root directory of your local Git repository configured with
 **2. Update Your Configuration**
 
 ```
-In your file `config.yml`, add the following top-level property to enable local backend functionality:
+In your `config.yml` file, add the following top-level property to enable local backend functionality:
 ```
 
 ```yaml
@@ -398,7 +398,8 @@ In your file `config.yml`, add the following top-level property to enable local 
 ```
 
 **3. Start the Decap Server**
-    Run the following command from the root directory of your repository to start the Decap server:
+
+Run the following command from the root directory of your repository to start the Decap server:
 
 ```shell
  npx decap-server
@@ -428,11 +429,11 @@ Replace `<your-nextjs-port>` with the port number your Next.js server is running
 
 It’s crucial to keep the Decap server running alongside your Next.js development server. The Decap server serves as a backend for content management, enabling the CMS to save files locally during development. If the Decap server is not running, you won't be able to access the admin interface or manage your content effectively.
 
-Additionally, please be aware that the Decap server operates an unauthenticated Express server. Since any client can send requests to this server, it should only be used for local development purposes. Also, note that the feature `editorial_workflow` is not supported in this environment.
+Additionally, please be aware that the Decap server operates an unauthenticated Express server. Since any client can send requests to this server, it should only be used for local development purposes. Also, note that the `editorial_workflow` feature is not supported in this environment.
 
 ## 3.3 Add Links to Admin Page
 
-Next, you may want to provide a navigation link to the admin page from your application. You can do this by modifying the file:index.tsx
+Next, you may want to provide a navigation link to the admin page from your application. You can do this by modifying the `index.tsx` file:
 
 ```tsx
 // pages/index.tsx
@@ -454,13 +455,13 @@ export default HomePage;
 
 ### 4.1 Creating Markdown Files
 
-   To structure your content, create a directory `content/posts` for your blog posts in the public directory. This will be where Decap CMS saves the markdown files created from the admin interface, as configured in the file: `config.yml`
+   To structure your content, create a `content/posts` directory for your blog posts in the public directory. This will be where Decap CMS saves the markdown files created from the admin interface, as configured in the `config.yml` file:
 
 ```shell
 mkdir -p content/posts
 ```
 
-Within this directory `content/posts`, you can manually create Markdown files for your blog posts or use a content management system like **Decap CMS** to manage your posts directly from an admin interface.
+Within this `content/posts` directory, you can manually create Markdown files for your blog posts or use a content management system like **Decap CMS** to manage your posts directly from an admin interface.
 
 ### 4.2 Previewing Content
 
@@ -472,23 +473,15 @@ Decap CMS allows you to preview content directly within the admin interface. You
 
    To effectively manage and fetch your blog posts, it’s a good practice to create a utility file containing functions that handle operations related to your Markdown files. This can help keep your code clean and organized.
 
-First, install the package to parse markdown frontmatter:gray-matter
+First, install the `gray-matter` package to parse markdown frontmatter:
 
-```bash
+```shell
 npm install gray-matter
 ```
 
 ### 5.1 Creating a Utils File
 
 Create a new file named `utils.ts`(or any preferred name) in your project directory, and add the following functions to manage your Markdown files: 
-
-```ts
-// utils.ts
-import fs from "fs";
-import matter from "gray-matter";
-import path from "path";
-import { PostData } from "./types"; // Import your type
-```
 
 ```ts
 // types.ts
@@ -503,6 +496,14 @@ export interface PostData {
   author: string;
   body: string; // The actual content of the post
 }
+```
+
+```ts
+// utils.ts
+import fs from "fs";
+import matter from "gray-matter";
+import path from "path";
+import { PostData } from "./types"; // Import your type
 
 const postsDirectory = path.join(process.cwd(), "content/posts");
 
@@ -550,22 +551,22 @@ export function getPostData(slug: string): PostData {
 
 ### 5.2 Explanation of Utility Functions
 
-| Function Name                          | Description                                                                                                                                      |
-| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| getSortedPostsData                     | Reads all Markdown files, extracts their metadata, sorts the posts by date, and returns an array of post data.                                   |
-| getAllPostIds                          | Retrieves all post file names and maps them to an array of objects containing the parameter for dynamic routing in Next.js.slug                  |
-| getPostData                            | Fetches the content and metadata of a single post based on its slug, returning it in a structured format.                                        |
-| const { data } = matter(fileContents); | In this code, we read the Markdown files from the directory, extract their metadata using gray-matter, and pass the posts as props.content/posts |
+| Function Name                            | Description                                                                                                                                         |
+| ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `getSortedPostsData`                     | Reads all Markdown files, extracts their metadata, sorts the posts by date, and returns an array of post data.                                      |
+| `getAllPostIds`                          | Retrieves all post file names and maps them to an array of objects containing the `slug` parameter for dynamic routing in Next.js.                  |
+| `getPostData`                            | Fetches the content and metadata of a single post based on its slug, returning it in a structured format.                                           |
+| `const { data } = matter(fileContents);` | In this code, we read the Markdown files from the `content/posts` directory, extract their metadata using gray-matter, and pass the posts as props. |
 
 ## 6. Fetching and Displaying Content in Next.js
 
    Now that we have our utility functions, we can integrate them into our Next.js pages.
 
-### 6.1 Use to Fetch PostsgetStaticProps
+### 6.1 Use `getStaticProps` to Fetch Posts
 
 Next.js allows you to fetch data at build time using `getStaticProps`.
 
-To fetch data at build time using `getStaticProps`, update your file `index.tsx` in the directory: `pages`
+To fetch data at build time using `getStaticProps`, update your `index.tsx` file in the `pages` directory:
 
 ```tsx
 // pages/index.tsx
@@ -606,17 +607,17 @@ In this code, we read the Markdown files from the `content/posts` directory, ext
 
 ### 6.2 Rendering Posts on the Page
 
-You can render each post’s title and date in a list format. The link `Read More` will take users to a detailed page for each post.
+You can render each post’s title and date in a list format. The `Read More` link will take users to a detailed page for each post.
 
-Create a dynamic route to display individual posts. Create a new folder called `posts` under `pages`, then create a file: `[slug].tsx`
+Create a dynamic route to display individual posts. Create a new folder called `posts` under `pages`, then create a `[slug].tsx` file:
 
 This code allows you to fetch and render the content of individual markdown posts.
 
-To properly handle markdown we can use a markdown parser and sanitizer such as the `react-markdown` or `next-mdx-remote` .
+To properly handle markdown we can use a markdown parser and sanitizer such as the `react-markdown` or `next-mdx-remote`.
 
 start by installing your prefered package, here I will be using the `react-markdown` for simplicity:
 
-```bash
+```shell
 npm i react-markdown
 ```
 
@@ -665,7 +666,7 @@ export default PostPage;
 
 ### 6.1 Deploying to Netlify or Vercel
 
-   After you’ve completed your application, you can deploy it to platforms like Netlify or Vercel.
+   After you’ve completed your application, you can deploy it to platforms like [Netlify](https://www.netlify.com/) or [Vercel](https://vercel.com/).
 
 * **Netlify**: You can connect your GitHub repository to Netlify and enable Identity and Git Gateway
 
@@ -679,7 +680,7 @@ If you are using any environment variables (e.g., for GitHub or GitLab authentic
 
 ## 7. Conclusion
 
-   Congratulations! You have successfully set up and integrated Decap CMS with your Next.js application. You can now manage your blog content easily through the Decap CMS interface.
+Congratulations! You have successfully set up and integrated Decap CMS with your Next.js application. You can now manage your blog content easily through the Decap CMS interface.
 
 In this guide, we've explored how to set up a Markdown blog in Next.js, including creating a content structure, writing utility functions to manage posts, and using these functions to display content in the application.
 
