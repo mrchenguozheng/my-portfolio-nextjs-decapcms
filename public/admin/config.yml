@@ -5,7 +5,9 @@ backend:
   branch: main  # The branch to update
   repo: issiki/my-portfolio-nextjs-decapcms
 
-local_backend: true # set to true to allow decap cms to save file locally during development
+# set to true to allow decap cms to save file locally during development
+# local_backend: true
+local_backend: false
 
 media_folder: "public/uploads"  # Folder to store media
 public_folder: "/uploads"  # Public URL for media
