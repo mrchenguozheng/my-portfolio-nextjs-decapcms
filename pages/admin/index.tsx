@@ -4,9 +4,10 @@
 import { useEffect } from "react";
 import Head from "next/head";
 import Script from "next/script";
+import { User } from "@/src/types";
 
 interface NetlifyIdentity {
-    on: (event: string, callback: (user: any) => void) => void; // Update here
+    on: (event: string, callback: (user: User) => void) => void; // Update here
     // Add other properties and methods as needed
 }
 

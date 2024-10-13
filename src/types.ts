@@ -10,3 +10,7 @@ export interface PostData {
     author: string;
     body: string; // The actual content of the post
 }
+
+export interface User {
+    name: string;
+}
